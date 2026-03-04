@@ -1,7 +1,11 @@
 import { useState } from 'react'
 
-import ProductCardComponent from './menu-card/menu-card.tsx'
+import MenuCard from './menu-card/menu-card.tsx'
+import Order from './order-page/order.tsx'
+import Delivery from './delivery/delivery.tsx'
+
 import firstCard from './images/firstCard.svg'
+
 import './App.css'
 
 function App() {
@@ -9,7 +13,9 @@ function App() {
 
   return (
     <>
-    <ProductCardComponent image={firstCard} title={'Свежая рыба'}/>
+    <Delivery/>
+    {/* <Order totalPrice={55555}/> */}
+    {/* <MenuCard image={firstCard} title={'Свежая рыба'}/> */}
     </>
   )
 }

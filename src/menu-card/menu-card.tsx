@@ -6,6 +6,14 @@ interface ProductCardProps {
   title: string;
 }
 
+const CardWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
 const MenuCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,8 +52,6 @@ const Button = styled.button`
   font-size: 13px;
   cursor: pointer;
   border-radius: 20px;
-  
-  /* Убираем дублирование стилей в hover */
   &:hover {
     background: transparent;
     border-color: #BC8146;
@@ -55,13 +61,15 @@ const Button = styled.button`
 
 const ProductCard: React.FC<ProductCardProps> = ({ image, title }) => {
   return (
-    <MenuCard>
-      <MenuImage src={image} alt={title} />
-      <Info>
-        <Title>{title}</Title>
-        <Button>Перейти в каталог</Button>
-      </Info>
-    </MenuCard>
+    <CardWrapper>
+      <MenuCard>
+        <MenuImage src={image} alt={title} />
+        <Info>
+          <Title>{title}</Title>
+          <Button>Перейти в каталог</Button>
+        </Info>
+      </MenuCard>
+    </CardWrapper>
   );
 };
 
